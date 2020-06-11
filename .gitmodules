@@ -4,3 +4,6 @@
 [submodule "src/peripherals"]
 	path = src/peripherals
 	url = https://github.com/DaelonSuzuka/K42-Peripheral-Libraries
+[submodule "src/os"]
+	path = src/os
+	url = https://github.com/DaelonSuzuka/K42-System-Libraries
