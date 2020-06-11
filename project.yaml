@@ -1,0 +1,9 @@
+name: Project-Template
+processor: 18F27K42
+programmer: Pickit4
+src_dir: src
+build_dir: build
+obj_dir: obj
+defines:
+- DEVELOPMENT
+linker_flags: []

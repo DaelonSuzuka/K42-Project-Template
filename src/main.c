@@ -1,4 +1,12 @@
+#include "config.h"
+#include "system.h"
+
+/* ************************************************************************** */
 
 void main(void) {
-    // blah blah
+    startup();
+
+    while (1) {
+        // empty mainloop
+    }
 }
