@@ -1,0 +1,13 @@
+# ignore output and build artifacts
+build/**
+obj/**
+dist/**
+
+# ignore stupid log file outputs from pk3cmd.exe
+log.0
+log.1
+log.2
+MPLABXLog.xml*
+log.0.lck
+
+.vscode
