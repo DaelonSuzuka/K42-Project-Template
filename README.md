@@ -1,19 +1,67 @@
-# K42-Project-Template
-This is a 'minimum buildable' project using the full set of PIC18FxxK42 libraries.
+# What is this?
+This repository is a 'batteries-included' template for projects using 8bit PIC microcontrollers from Microchip. The primary development of this setup has been using the PIC18FxxK42 family, but many of the features should be applicable to other 8 bit PICs(PIC10, PIC12, PIC16).
 
-This template is effectively the same as entering the following commands in an empty folder:
-
-```shell
-git init
-git submodule add https://github.com/DaelonSuzuka/K42-Peripheral-Libraries src/peripherals
-git submodule add https://github.com/DaelonSuzuka/K42-System-Libraries src/peripherals
-git submodule add https://github.com/DaelonSuzuka/Easy-XC8.git toolchain
-python toolchain/install.py
-make config
+# Getting Started
+Make sure the [requirements](#-Requirements) are satisfied, then run the following commands:
 ```
+git clone --recursive https://github.com/DaelonSuzuka/K42-Project-Template
+cd K42-Project-Template
+make compile
+```
+You can also star this project, then [create a new repository](https://github.com/new) and select `K-42-Project-Template` from the `Repository template` drop-down box. Unfortunately, GitHub templates do not preserve git submodules, so after you create your repo from the template, you'll need to manually add the submodules:
 
-# Project skeleton
-A small selection of example files are included. 
+```
+git clone <your repository URL>
+cd <your new repo directory>
+git submodule add https://github.com/DaelonSuzuka/K42-Peripheral-Libraries.git src/peripherals
+git submodule add https://github.com/DaelonSuzuka/K42-System-Libraries.git src/os
+git submodule add https://github.com/DaelonSuzuka/Easy-XC8.git toolchain
+```
+You should then commit your changes and push them back to GitHub.
+
+# Requirements
+- GNU Make (Tested with 3.8.2 and 4.4. Others probably work, but haven't been tested)
+- python3 >= 3.6 (including the `venv` and `pip` modules)
+- xc8 compiler (`xc8` must be on your path)
+- mplabx IPE (`ipecmd` or `ipecmd.sh` must be on your path)
+
+# Features
+
+## [Easy XC8](https://github.com/DaelonSuzuka/Easy-XC8)
+Easy XC8 is a no-hassle toolchain that frees you from the shackles of MPLABX IDE. 
+
+Features:
+- editor agnostic (I recommend [Visual Studio Code](https://code.visualstudio.com/))
+- build your project
+- upload your hex file using an attached USB programmer
+- in-line code generation using [Ned Batchelder's Cog](https://nedbatchelder.com/code/cog/index.html) and my [CogUtils](https://github.com/DaelonSuzuka/CogUtils) and [CodeGen](https://github.com/DaelonSuzuka/CodeGen) libraries
+- creating documentation with [Doxygen](https://www.doxygen.nl/index.html)
+- static analysis using [Cppcheck](http://cppcheck.sourceforge.net/), and possibly clang-analyzer in the future
+
+## [K42 Peripheral Libraries](https://github.com/DaelonSuzuka/K42-Peripheral-Libraries)
+This repository has drivers for the following peripherals:
+- Analog-to-Digital Converter
+- Configurable Logic Cells
+- Device Information Area
+- Fixed Voltage Reference/Temperature Indicator Module
+- High/Low Voltage Detect
+- Interrupt
+- Nonvolatile Memory
+- Oscillator
+- Ports
+- Peripheral Pin Select
+- Reset Handler
+- Timers
+- UARTs
+
+## [K42 System Libraries](https://github.com/DaelonSuzuka/K42-System-Libraries)
+The following system libraries are included:
+- Serial Port, a UART wrapper that provides `getch()`, `putch()`, `print()`, and `println()`. defining `putch()` enables XC8's `printf()`
+- Stopwatch, provides calibrated millisecond and microsecond stopwatches, and helper macros to help with profiling your code
+- System Clock, a calibrated, 1ms resolution central clock, `delay_us()`, `delay_ms()`, `get_current_time()`, and `time_since()` 
+
+## Included files
+Additionally, a selection of example files are included. 
 
 - `Makefile`, generated with the toolchain's install script
 - `project.yaml`, generated with the toolchain's config wizard(`make config`)
