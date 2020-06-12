@@ -8,7 +8,7 @@ git clone --recursive https://github.com/DaelonSuzuka/K42-Project-Template
 cd K42-Project-Template
 make compile
 ```
-You can also star this project, then [create a new repository](https://github.com/new) and select `K-42-Project-Template` from the `Repository template` drop-down box. Unfortunately, GitHub templates do not preserve git submodules, so after you create your repo from the template, you'll need to manually add the submodules:
+You can also fork this project, then [create a new repository](https://github.com/new) and select `K-42-Project-Template` from the `Repository template` drop-down box. Unfortunately, GitHub templates do not preserve git submodules, so after you create your repo from the template, you'll need to manually add the submodules:
 
 ```
 git clone <your repository URL>
