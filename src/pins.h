@@ -6,12 +6,26 @@
 
 /* ************************************************************************** */
 /* [[[cog
-    from codegen import pins, fmt
-    cog.outl(fmt(pins.pin_declarations())) 
+    from codegen import fmt; import pins
+    cog.outl(fmt(pins.pin_declarations()))
 ]]] */
 
 // GPIO read functions
-// none
+extern bool read_BUTTON_ONE_PIN(void);
+extern bool read_BUTTON_TWO_PIN(void);
+
+// Button stuff
+#define NUMBER_OF_BUTTONS 2
+
+// array of pointers to button reading functions
+typedef bool (*button_function_t)(void);
+extern button_function_t buttonFunctions[NUMBER_OF_BUTTONS];
+
+// enum of button names
+enum {
+    ONE,
+    TWO,
+} button_names;
 
 // GPIO write functions
 // none
