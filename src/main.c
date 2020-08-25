@@ -3,6 +3,7 @@
 
 /* ************************************************************************** */
 
+// These warnings are only a problem using XC8-cc driver in C99 mode
 #ifdef __XC8_CC_C99__
 
 // Disable "unused variable" warning
