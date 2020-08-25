@@ -3,7 +3,7 @@ build
 obj
 dist
 
-# ignore stupid log file outputs from pk3cmd.exe
+# ignore stupid log file outputs from microchip programmer software
 log.0
 log.1
 log.2
