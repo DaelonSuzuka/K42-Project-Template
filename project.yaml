@@ -1,9 +1,12 @@
 name: Project-Template
+hw_version: '1.2'
+sw_version: '0.0.1'
 processor: 18F27K42
 programmer: Pickit4
 src_dir: src
 build_dir: build
 obj_dir: obj
 defines:
-- DEVELOPMENT
-linker_flags: []
+  - DEVELOPMENT
+linker_flags: 
+  - -Pshell_cmds
