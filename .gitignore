@@ -12,6 +12,3 @@ log.0.lck
 
 # ignore vscode settings folder
 .vscode
-
-# vscode won't stop making this file
-debug.log
