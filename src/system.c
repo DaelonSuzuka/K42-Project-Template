@@ -2,7 +2,7 @@
 #include "os/buttons.h"
 #include "os/serial_port.h"
 #include "os/stopwatch.h"
-#include "os/system_clock.h"
+#include "os/system_time.h"
 #include "peripherals/device_information.h"
 #include "peripherals/interrupt.h"
 #include "peripherals/oscillator.h"
@@ -54,7 +54,7 @@ static void OS_init(void) {
     buttons_init(NUMBER_OF_BUTTONS, buttonFunctions);
     button_isr_init();
 
-    system_clock_init();
+    system_time_init();
     stopwatch_init();
 }
 
