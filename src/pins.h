@@ -30,7 +30,10 @@ enum {
 // GPIO write functions
 // none
 
-// PPS initialization macros
+// GPIO direction functions
+// none
+
+// PPS Pin initialization macros
 #define PPS_DEBUG_TX_PIN PPS_OUTPUT(B, 0)
 #define PPS_DEBUG_RX_PIN PPS_INPUT(B, 1)
 

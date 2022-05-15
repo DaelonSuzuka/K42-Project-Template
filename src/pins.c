@@ -21,6 +21,9 @@ button_function_t buttonFunctions[NUMBER_OF_BUTTONS] = {
 // GPIO write functions
 // none
 
+// GPIO direction functions
+// none
+
 // [[[end]]]
 
 /* ************************************************************************** */
